@@ -1,0 +1,10 @@
+ <table class="table table-hover">
+    <tr *ngFor="let equi of service.list">
+        <td (click)="populateForm(equi)">{{equi.EquipeID}}</td>
+      <td (click)="populateForm(equi)">{{equi.Nom}}</td>
+      <td (click)="populateForm(equi)">{{equi.Ville}}</td>
+      <td (click)="populateForm(equi)">{{equi.Sport}}</td>
+      <td><button (click)="onDelete(equi.EquipeID)" class="btn btn-sm btn-outline-danger">X</button></td>
+    </tr>
+  </table> 
+  

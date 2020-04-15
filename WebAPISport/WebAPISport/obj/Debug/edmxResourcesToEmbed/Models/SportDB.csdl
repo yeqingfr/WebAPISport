@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SportDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Equipe">
+    <Key>
+      <PropertyRef Name="EquipeID" />
+    </Key>
+    <Property Name="EquipeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Ville" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sport" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Joueur" Relationship="Self.FK_Joueur_Equipe" FromRole="Equipe" ToRole="Joueur" />
+  </EntityType>
+  <EntityType Name="Joueur">
+    <Key>
+      <PropertyRef Name="JoueurID" />
+    </Key>
+    <Property Name="JoueurID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EquipeID" Type="Int32" />
+    <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Prenom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateNaissance" Type="DateTime" Precision="0" />
+    <Property Name="Sexe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Numero" Type="Int32" />
+    <NavigationProperty Name="Equipe" Relationship="Self.FK_Joueur_Equipe" FromRole="Joueur" ToRole="Equipe" />
+  </EntityType>
+  <Association Name="FK_Joueur_Equipe">
+    <End Role="Equipe" Type="Self.Equipe" Multiplicity="0..1" />
+    <End Role="Joueur" Type="Self.Joueur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipe">
+        <PropertyRef Name="EquipeID" />
+      </Principal>
+      <Dependent Role="Joueur">
+        <PropertyRef Name="EquipeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SportDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Equipe" EntityType="Self.Equipe" />
+    <EntitySet Name="Joueur" EntityType="Self.Joueur" />
+    <AssociationSet Name="FK_Joueur_Equipe" Association="Self.FK_Joueur_Equipe">
+      <End Role="Equipe" EntitySet="Equipe" />
+      <End Role="Joueur" EntitySet="Joueur" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
