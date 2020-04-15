@@ -1,5 +1,5 @@
 <form  #form="ngForm" (submit)="onSubmit(form)" autocomplete="off" >
-    <input type="hidden" name="EquipeID" #EquipeID="ngModel" [(ngModel)]="service.formData.EquipeID"> 
+    <!-- <input type="hidden" name="EquipeID" #EquipeID="ngModel" [(ngModel)]="service.formData.EquipeID">  -->
     <div class="form-group">
       <label>Nom</label>
       <input name="Nom" #Nom="ngModel" [(ngModel)]="service.formData.Nom" class="form-control" required>
@@ -9,21 +9,19 @@
       <label>Ville</label>
       <input name="Ville" #Ville="ngModel" [(ngModel)]="service.formData.Ville" class="form-control">
     </div>
-    <div class="form-group">
+  
+    <!-- <div class="col-md-6">   -->
+      <div class="form-group">
         <label>Sport</label>
-        <!-- <input name="Sport" #Sport="ngModel" [(ngModel)]="service.formData.Sport" class="form-control">   -->
-        <div class="col-md-4">
-          <select   formControlName="sportName" (change)="changeSport($event)">
-            <option *ngFor="let sport of listSports"  [ngValue]="sport.id">{{sport.name}}</option>
-          </select>
-          <!-- <select  name="Sport" #Sport="ngModel" [(ngModel)]="service.formData.Sport" class="form-control" data-val="true" formControlName="sport">
+         <!-- <input name="Sport" #Sport="ngModel" [(ngModel)]="service.formData.Sport" class="form-control">                  -->
+          <select  name="Sport" #Sport="ngModel" [(ngModel)]="service.formData.Sport" class="form-control" >
               <option value="">-- Select Sport --</option>
               <option value="Hockey">Hockey</option>
               <option value="Baseball">Baseball</option>
               <option value="Basketball">Basketball </option>
               <option value="Football">Football</option>
-          </select> -->
-      </div> 
+          </select> 
+      <!-- </div>  -->
     </div>
     <div class="form-group">
       <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">Creer</button>

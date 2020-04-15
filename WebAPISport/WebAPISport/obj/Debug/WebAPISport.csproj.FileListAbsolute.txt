@@ -93,11 +93,9 @@ C:\Users\yeqing.DESKTOP-OGKACNR\source\repos\WebAPISport\WebAPISport\bin\fr\Syst
 C:\Users\yeqing.DESKTOP-OGKACNR\source\repos\WebAPISport\WebAPISport\bin\fr\System.Web.WebPages.resources.dll
 C:\Users\yeqing.DESKTOP-OGKACNR\source\repos\WebAPISport\WebAPISport\bin\fr\System.Web.WebPages.Deployment.resources.dll
 C:\Users\yeqing.DESKTOP-OGKACNR\source\repos\WebAPISport\WebAPISport\bin\fr\System.Web.WebPages.Razor.resources.dll
-C:\Users\yeqing.DESKTOP-OGKACNR\source\repos\WebAPISport\WebAPISport\obj\Debug\WebAPISport.csprojAssemblyReference.cache
-C:\Users\yeqing.DESKTOP-OGKACNR\source\repos\WebAPISport\WebAPISport\obj\Debug\WebAPISport.csproj.CoreCompileInputs.cache
-C:\Users\yeqing.DESKTOP-OGKACNR\source\repos\WebAPISport\WebAPISport\obj\Debug\WebAPISport.csproj.CopyComplete
 C:\Users\yeqing.DESKTOP-OGKACNR\source\repos\WebAPISport\WebAPISport\obj\Debug\WebAPISport.dll
 C:\Users\yeqing.DESKTOP-OGKACNR\source\repos\WebAPISport\WebAPISport\obj\Debug\WebAPISport.pdb
 C:\Users\yeqing.DESKTOP-OGKACNR\source\repos\WebAPISport\WebAPISport\bin\System.Web.Cors.dll
 C:\Users\yeqing.DESKTOP-OGKACNR\source\repos\WebAPISport\WebAPISport\bin\System.Web.Http.Cors.dll
 C:\Users\yeqing.DESKTOP-OGKACNR\source\repos\WebAPISport\WebAPISport\bin\System.Web.Http.Cors.xml
+C:\Users\yeqing.DESKTOP-OGKACNR\source\repos\WebAPISport\WebAPISport\obj\Debug\WebAPISport.csprojResolveAssemblyReference.cache

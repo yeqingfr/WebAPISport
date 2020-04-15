@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EquipeService } from 'src/app/shared/equipe.service';
-import { FormBuilder,NgForm, FormGroup,Validators } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
 
@@ -11,30 +11,30 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EquipeComponent implements OnInit {
 
-  constructor(public service:EquipeService,public toastr: ToastrService,public fb: FormBuilder) { }
+  constructor(public service:EquipeService,public toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.resetForm();
   }
-  equipeForm: FormGroup;
-  listSports:Array<Object>  = [
-    { id: 0, name: "Hockey" },
-    { id: 1, name: "Baseball" },
-    { id: 2, name: "Basketball" },
-    { id: 3, name: "Football" },
-  ];
+  // equipeForm: FormGroup;
+  // listSports:Array<Object>  = [
+  //   { id: 0, name: "Hockey" },
+  //   { id: 1, name: "Baseball" },
+  //   { id: 2, name: "Basketball" },
+  //   { id: 3, name: "Football" },
+  // ];
 
-   selectedSport=this.listSports[0];
+  //  selectedSport=this.listSports[0];
 
-   registrationForm = this.fb.group({
-    sportName: ['', [Validators.required]]
-  })
+  //  registrationForm = this.fb.group({
+  //   sportName: ['', [Validators.required]]
+  // })
 
   resetForm(form?: NgForm) {
      if (form != null)
       form.resetForm();
     this.service.formData = {
-      EquipeID: null,
+      EquipeID: 99999,
       Nom: '',
       Ville: '',
       Sport: ''
@@ -51,7 +51,6 @@ export class EquipeComponent implements OnInit {
   }
 
   insertRecord(form: NgForm) {
-    debugger;
     this.service.postEquipe(form.value).subscribe(res => {
       this.toastr.success('Inserted successfully', 'Management Equipe');
       this.resetForm(form);
@@ -68,12 +67,12 @@ export class EquipeComponent implements OnInit {
 
   }
 
-  changeSport(e) {
-    console.log(e.value)
-    this.sportName.setValue(e.target.value, {
-      onlySelf: true
-    })
-  }
+  // changeSport(e) {
+  //   console.log(e.value)
+  //   this.sportName.setValue(e.target.value, {
+  //     onlySelf: true
+  //   })
+  // }
   
-  get sportName(){return this.registrationForm.get('sportName');}
+  // get sportName(){return this.registrationForm.get('sportName');}
 }

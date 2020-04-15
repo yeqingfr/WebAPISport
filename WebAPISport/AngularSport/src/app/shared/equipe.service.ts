@@ -20,7 +20,7 @@ export class EquipeService {
   }
 
   postEquipe(formData:Equipe) { 
-    return this.http.post(this.rootURL+'/Equipe',formData)
+    return this.http.post(this.rootURL+'/Equipe',formData);
   }
 
   putEquipe(formData : Equipe){
