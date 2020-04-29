@@ -1,0 +1,34 @@
+<p>joueur works!</p>
+
+<form  #formjoueur="ngForm" (submit)="onSubmit(formjoueur)" autocomplete="off" >
+    <!-- <input type="hidden" name="EquipeID" #EquipeID="ngModel" [(ngModel)]="service.formData.EquipeID">  -->
+    <!-- <input type="hidden" name="JoueurID" #JoueurID="ngModel" [(ngModel)]="service.formData.JoueurID">  -->
+    <div class="form-group">
+      <label>Nom</label>
+      <input name="Nom" #Nom="ngModel" [(ngModel)]="service.formData.Nom" class="form-control" required>
+       <div class="validation-error" *ngIf="Nom.invalid && Nom.touched">This field is required.</div> 
+    </div>
+    <div class="form-group">
+      <label>Prenom</label>
+      <input name="Prenom" #Prenom="ngModel" [(ngModel)]="service.formData.Prenom" class="form-control">
+    </div>
+      <div class="form-group">
+        <label>Date de Naissance</label>
+        <input name="DateNaissance" #DateNaissance="ngModel" [(ngModel)]="service.formData.DateNaissance" class="form-control">                 
+    </div>
+    <div class="form-group">
+        <label>Sexe</label>
+        <select  name="Sexe" #Sexe="ngModel" [(ngModel)]="service.formData.Sexe" class="form-control" >
+            <option value="">-- Select Sexe --</option>
+            <option value="Feminin">Feminin</option>
+            <option value="Masculin">Masculin</option>
+        </select>                 
+    </div>
+    <div class="form-group">
+        <label>Numéro</label>
+        <input name="Numero" #Numero="ngModel" [(ngModel)]="service.formData.Numero" class="form-control">                 
+    </div>
+    <div class="form-group">
+      <button type="submit" [disabled]="formjoueur.invalid" class="btn btn-lg btn-block">Creer</button>
+    </div> 
+  </form>

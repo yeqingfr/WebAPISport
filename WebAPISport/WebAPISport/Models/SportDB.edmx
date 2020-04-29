@@ -22,7 +22,7 @@
           <Property Name="EquipeID" Type="int" />
           <Property Name="Nom" Type="varchar" MaxLength="50" />
           <Property Name="Prenom" Type="varchar" MaxLength="50" />
-          <Property Name="DateNaissance" Type="date" />
+          <Property Name="DateNaissance" Type="varchar" MaxLength="50" />
           <Property Name="Sexe" Type="varchar" MaxLength="50" />
           <Property Name="Numero" Type="int" />
         </EntityType>
@@ -69,7 +69,7 @@
           <Property Name="EquipeID" Type="Int32" />
           <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Prenom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DateNaissance" Type="DateTime" Precision="0" />
+          <Property Name="DateNaissance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Sexe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Numero" Type="Int32" />
           <NavigationProperty Name="Equipe" Relationship="Self.FK_Joueur_Equipe" FromRole="Joueur" ToRole="Equipe" />
@@ -86,7 +86,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SportDBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SportDB" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Equipe" EntityType="Self.Equipe" />
           <EntitySet Name="Joueur" EntityType="Self.Joueur" />
           <AssociationSet Name="FK_Joueur_Equipe" Association="Self.FK_Joueur_Equipe">
@@ -99,7 +99,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SportDBModelStoreContainer" CdmEntityContainer="SportDBEntities">
+        <EntityContainerMapping StorageEntityContainer="SportDBModelStoreContainer" CdmEntityContainer="SportDB">
           <EntitySetMapping Name="Equipe">
             <EntityTypeMapping TypeName="SportDBModel.Equipe">
               <MappingFragment StoreEntitySet="Equipe">

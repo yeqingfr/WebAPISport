@@ -13,10 +13,10 @@ namespace WebAPISport.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SportDBEntities : DbContext
+    public partial class SportDB : DbContext
     {
-        public SportDBEntities()
-            : base("name=SportDBEntities")
+        public SportDB()
+            : base("name=SportDB")
         {
         }
     

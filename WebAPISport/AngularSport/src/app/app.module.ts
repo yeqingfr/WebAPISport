@@ -11,13 +11,17 @@ import { EquipesComponent } from './equipes/equipes.component';
 import { EquipeComponent } from './equipes/equipe/equipe.component';
 import { EquipeListComponent } from './equipes/equipe-list/equipe-list.component';
 import { EquipeService } from './shared/equipe.service';
+import { JoueurComponent } from './equipes/joueur/joueur.component';
+import { JoueurListComponent } from './equipes/joueur-list/joueur-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EquipesComponent,
     EquipeComponent,
-    EquipeListComponent
+    EquipeListComponent,
+    JoueurComponent,
+    JoueurListComponent
   ],
   imports: [
     BrowserModule,

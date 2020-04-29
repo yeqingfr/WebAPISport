@@ -17,7 +17,7 @@
     <Property Name="EquipeID" Type="int" />
     <Property Name="Nom" Type="varchar" MaxLength="50" />
     <Property Name="Prenom" Type="varchar" MaxLength="50" />
-    <Property Name="DateNaissance" Type="date" />
+    <Property Name="DateNaissance" Type="varchar" MaxLength="50" />
     <Property Name="Sexe" Type="varchar" MaxLength="50" />
     <Property Name="Numero" Type="int" />
   </EntityType>

@@ -18,7 +18,7 @@ namespace WebAPISport.Models
         public Nullable<int> EquipeID { get; set; }
         public string Nom { get; set; }
         public string Prenom { get; set; }
-        public Nullable<System.DateTime> DateNaissance { get; set; }
+        public string DateNaissance { get; set; }
         public string Sexe { get; set; }
         public Nullable<int> Numero { get; set; }
     

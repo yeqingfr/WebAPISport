@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EquipeService } from 'src/app/shared/equipe.service';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { JoueurService } from 'src/app/shared/joueur.service';
 
 
 @Component({
@@ -11,25 +12,12 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EquipeComponent implements OnInit {
 
-  constructor(public service:EquipeService,public toastr: ToastrService) { }
+  constructor(public service:EquipeService,public toastr: ToastrService,public service2: JoueurService) { }
 
   ngOnInit(): void {
     this.resetForm();
   }
-  // equipeForm: FormGroup;
-  // listSports:Array<Object>  = [
-  //   { id: 0, name: "Hockey" },
-  //   { id: 1, name: "Baseball" },
-  //   { id: 2, name: "Basketball" },
-  //   { id: 3, name: "Football" },
-  // ];
-
-  //  selectedSport=this.listSports[0];
-
-  //  registrationForm = this.fb.group({
-  //   sportName: ['', [Validators.required]]
-  // })
-
+ 
   resetForm(form?: NgForm) {
      if (form != null)
       form.resetForm();
@@ -67,12 +55,5 @@ export class EquipeComponent implements OnInit {
 
   }
 
-  // changeSport(e) {
-  //   console.log(e.value)
-  //   this.sportName.setValue(e.target.value, {
-  //     onlySelf: true
-  //   })
-  // }
-  
-  // get sportName(){return this.registrationForm.get('sportName');}
+
 }

@@ -14,7 +14,7 @@ namespace WebAPISport.Controllers
 {
     public class JoueurController : ApiController
     {
-        private SportDBEntities db = new SportDBEntities();
+        private SportDB db = new SportDB();
 
         // GET: api/Joueur
         public IQueryable<Joueur> GetJoueur()
